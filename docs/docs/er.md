@@ -1,4 +1,52 @@
-\# Course Registration System - ER Diagram```mermaiderDiagram    INSTRUCTORS ||--o{ INSTRUCTOR\_COURSES : "teaches"    COURSES ||--o{ INSTRUCTOR\_COURSES : "assigned to"    STUDENTS ||--o{ ENROLLMENTS :    COURSES ||--o{ ENROLLMENTS : "has"    CATEGORIES {        serial category\_id PK        varchar category\_name UK    }    INSTRUCTORS {        serial instructor\_id PK        varchar first\_name        varchar last\_name        varchar email UK        varchar phone    }    COURSES {        serial course\_id PK        varchar course\_code UK        varchar title        int category\_id FK        int credits    }    INSTRUCTOR\_COURSES {        int instructor\_id PK, FK        int course\_id PK, FK        date assigned\_date    }    STUDENTS {        serial student\_id PK        char(10) student\_number UK        varchar first\_name        varchar last\_name        varchar email UK    }    ENROLLMENTS {        serial enrollment\_id PK        int student\_id FK        int course\_id FK        timestamp enrollment\_date        varchar status    }
+# Course Registration System - ER Diagram
 
+```mermaid
+erDiagram
+INSTRUCTORS ||--o{ INSTRUCTOR_COURSES : "teaches"
+COURSES ||--o{ INSTRUCTOR_COURSES : "assigned to"
+STUDENTS ||--o{ ENROLLMENTS : "registers"
+COURSES ||--o{ ENROLLMENTS : "has"
 
+CATEGORIES {
+serial category_id PK
+varchar category_name UK
+}
 
+INSTRUCTORS {
+serial instructor_id PK
+varchar first_name
+varchar last_name
+varchar email UK
+varchar phone
+}
+
+COURSES {
+serial course_id PK
+varchar course_code UK
+varchar title
+int category_id FK
+int credits
+}
+
+INSTRUCTOR_COURSES {
+int instructor_id PK, FK
+int course_id PK, FK
+date assigned_date
+}
+
+STUDENTS {
+serial student_id PK
+char(10) student_number UK
+varchar first_name
+varchar last_name
+varchar email UK
+}
+
+ENROLLMENTS {
+serial enrollment_id PK
+int student_id FK
+int course_id FK
+timestamp enrollment_date
+varchar status
+}
+```
