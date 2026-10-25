@@ -1,0 +1,22 @@
+psql:week-05/violations.sql:5: ERROR: new row for relation "courses" violates check constraint "chk_course_credits_range"
+DETAIL: Failing row contains (1, CENG101, Intro to CS, 1, 0).
+psql:week-05/violations.sql:9: ERROR: new row for relation "courses" violates check constraint "chk_course_credits_range"
+DETAIL: Failing row contains (2, CENG102, Advanced Algorithms, 1, 35).
+psql:week-05/violations.sql:13: ERROR: new row for relation "students" violates check constraint "chk_student_number_format"
+DETAIL: Failing row contains (1, 2024A00001, Ali, Yilmaz, ali@univ.edu).
+psql:week-05/violations.sql:17: ERROR: new row for relation "students" violates check constraint "chk_student_number_format"
+DETAIL: Failing row contains (2, 20240001 , Can, Demir, can@univ.edu).
+psql:week-05/violations.sql:21: ERROR: new row for relation "students" violates check constraint "chk_student_email_format"
+DETAIL: Failing row contains (3, 2024000002, Ayse, Kaya, ayse_at_univ.edu).
+psql:week-05/violations.sql:25: ERROR: new row for relation "instructors" violates check constraint "chk_instructor_email_format"
+DETAIL: Failing row contains (1, Mehmet, Ozturk, mehmet@univ, 05551112233).
+psql:week-05/violations.sql:29: ERROR: new row for relation "instructors" violates check constraint "chk_instructor_phone_length"
+DETAIL: Failing row contains (2, Zeynep, Celik, zeynep@univ.edu, 12345).
+psql:week-05/violations.sql:33: ERROR: new row for relation "courses" violates check constraint "chk_course_code_uppercase"
+DETAIL: Failing row contains (3, ceng201, Data Structures, 1, 4).
+psql:week-05/violations.sql:37: ERROR: new row for relation "enrollments" violates check constraint "chk_enrollment_status_valid"
+DETAIL: Failing row contains (1, 1, 1, 2026-10-25 12:00:00, PENDING).
+psql:week-05/violations.sql:41: ERROR: new row for relation "categories" violates check constraint "chk_category_name_not_empty"
+DETAIL: Failing row contains (1, ).
+psql:week-05/violations.sql:50: ERROR: null value in column "assigned_date" of relation "instructor_courses" violates not-null constraint
+DETAIL: Failing row contains (9999, 9999, null).
